@@ -1,5 +1,8 @@
 const controle = document.querySelectorAll("[data-controle]");
 const estatisticas = document.querySelectorAll("[data-estatistica]");
+const armadura = document.querySelector("#robotron");
+const alterar = document.querySelector("[troca-armadura]");
+var indice = 1;
 
 const pecas = {
     "bracos": {
@@ -35,6 +38,24 @@ const pecas = {
     }
 }
 
+const armaduras = [
+    "Robotron 2000 - Amarelo",
+    "Robotron 2000 - Azul",
+    "Robotron 2000 - Branco",
+    "Robotron 2000 - Preto",
+    "Robotron 2000 - Rosa",
+    "Robotron 2000 - Vermelho",
+]
+
+alterar.addEventListener("click", (evento) => {
+    armadura.src = "img/" + armaduras[indice] + ".png";
+    if (indice == 5) {
+        indice = 0;
+    } else {
+        indice++;
+    }
+})
+
 
 controle.forEach( (elemento) => {
     elemento.addEventListener("click", (evento) => {
@@ -60,3 +81,4 @@ function atualizaEstatisticas(peca) {
         elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
     })
 }
+

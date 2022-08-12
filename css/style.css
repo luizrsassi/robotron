@@ -131,7 +131,7 @@ main {
     border-color: var(--main-cinza);
 }
 
-.producao {
+.producao, [troca-armadura] {
     margin-top: 1em;
     font-size: 2em;
     text-transform: uppercase;
@@ -143,7 +143,7 @@ main {
     cursor: pointer;
 }
 
-.producao:hover {
+.producao:hover, [troca-armadura]:hover {
     background: var(--main-preto);
     color: var(--main-branco)
 }
